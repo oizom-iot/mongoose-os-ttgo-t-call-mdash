@@ -1,0 +1,67 @@
+author: Sohil Patel
+description: TTGO T-Call Mongoose OS
+version: 1.0
+
+libs_version: 2.17.0
+modules_version: 2.17.0
+mongoose_os_version: 2.17.0
+
+# Optional. List of tags for online search.
+tags:
+  - c
+
+includes:
+  - include
+
+# List of files / directories with C sources. No slashes at the end of dir names.
+sources:
+  - src
+
+# List of dirs. Files from these dirs will be copied to the device filesystem
+filesystem:
+  - fs
+
+config_schema:
+  - ["app", "o", {title: "App config"}]
+  - ["app.update_interval", "i", 300, {title: "Update interval in seconds"}]
+  - ["wifi.sta.enable", false]
+  - ["wifi.ap.enable", false]
+  - ["i2c.enable", true]
+  - ["pppos.enable", "b", true, {title: "Enable PPPoS"}]
+  - ["pppos.uart_no", "i", 1, {title: "Which UART to use"}]
+  - ["pppos.baud_rate", "i", 115200, {title: "Baud rate to use for data transfer"}]
+  - ["pppos.rx_gpio", "i", 26, {title: "RX pin; -1 = use default"}]
+  - ["pppos.tx_gpio", "i", 27, {title: "TX pin; -1 = use default"}]
+  - ["pppos.rts_gpio", "i", 5, {title: "RTS pin; -1 = use default"}]
+  - ["pppos.apn", "s", "isafe", {title: "APN name"}]
+
+
+# List of libraries used by this app, in order of initialisation
+libs:
+libs:
+  - origin: https://github.com/mongoose-os-libs/boards
+  - origin: https://github.com/mongoose-os-libs/mjs
+  - origin: https://github.com/mongoose-os-libs/ca-bundle
+  - origin: https://github.com/mongoose-os-libs/core
+  - origin: https://github.com/mongoose-os-libs/dash
+  - origin: https://github.com/mongoose-os-libs/fstab
+  - origin: https://github.com/mongoose-os-libs/provision
+  - origin: https://github.com/mongoose-os-libs/rpc-service-config
+  - origin: https://github.com/mongoose-os-libs/rpc-service-fs
+  - origin: https://github.com/mongoose-os-libs/rpc-service-gpio
+  - origin: https://github.com/mongoose-os-libs/rpc-uart
+  - origin: https://github.com/mongoose-os-libs/rpc-ws
+  - origin: https://github.com/mongoose-os-libs/shadow
+  - origin: https://github.com/mongoose-os-libs/adc
+  - origin: https://github.com/mongoose-os-libs/bt-service-debug
+  - origin: https://github.com/mongoose-os-libs/i2c
+  - origin: https://github.com/mongoose-os-libs/ota-shadow
+  - origin: https://github.com/mongoose-os-libs/ota-http-client
+  - origin: https://github.com/mongoose-os-libs/ota-http-server
+  - origin: https://github.com/mongoose-os-libs/rpc-loopback
+  - origin: https://github.com/mongoose-os-libs/rpc-mqtt
+  - origin: https://github.com/mongoose-os-libs/wifi
+  - origin: https://github.com/mongoose-os-libs/pppos
+
+# Used by the mos tool to catch mos binaries incompatible with this file format
+manifest_version: 2017-09-29
