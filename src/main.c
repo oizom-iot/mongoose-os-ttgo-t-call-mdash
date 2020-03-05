@@ -30,7 +30,6 @@ enum mgos_app_init_result mgos_app_init(void) {
     LOG(LL_ERROR, ("I2C bus missing, set i2c.enable=true in mos.yml"));
   } else {
     s_ccs811=mgos_ccs811_create(i2c, 0x5a); // Default I2C address
-
     if (s_ccs811) {
       mgos_set_timer(5000, true, timer_cb, NULL);
     } else {
