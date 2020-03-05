@@ -1,5 +1,5 @@
-author: mongoose-os
-description: A demo Mongoose OS firmware for C/C++
+author: Joy Jacob
+description: Interface of CCS811 and BME280 sensor using Mongoose OS
 version: 1.0
 
 libs_version: ${mos.version}
