@@ -15,10 +15,8 @@ static void timer_cb(void *user_data) {
   getHum=mgos_bme280_read_humidity(s_bme280);
   eco2=mgos_ccs811_get_eco2(s_ccs811);
   tvoc=mgos_ccs811_get_tvoc(s_ccs811);
-
   LOG(LL_INFO, ("ccs811 eCO2=%.0fppm TVOC=%.0fppb", eco2, tvoc));
   LOG(LL_INFO, ("BME280 temp=%.0f  hum=%.0f  Pr=%.0f", getTemp, getHum, getPr));
-
   (void) user_data;
 }
 
